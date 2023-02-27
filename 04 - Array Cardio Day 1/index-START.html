@@ -37,10 +37,12 @@
     ];
     //-----------------------------------
     /* The sort() method returns a reference to the original array, 
-    so mutating the returned array will mutate the original array as well. */
-    //TO AVOID MUTATING inventors Array;
-    let births = Object.create(inventors);
-    let lived = Object.create(inventors);
+    so mutating the returned array will mutate the original array as well. 
+    (inventors in this case)*/
+    //Also arrays are referemces in js so if we assign births,lived = inventors
+    //we're just referencing inventors and changing the original array too.
+    let births = Array.from(inventors);
+    let lived = Array.from(inventors);
     //-----------------------------------
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
